@@ -5,7 +5,7 @@ function getRandom() {
 }
 
 function getCart() {
- return cart;
+ return Object.keys(cart).length;
 }
 
 function setCart(c) {
@@ -17,7 +17,6 @@ function addToCart(item) {
   // write your code here
   cart[item] = getRandom();
   console.log(`${item} has been added to your cart.`);
-
   return cart;
 }
 
