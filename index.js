@@ -107,7 +107,7 @@ function placeOrder(cardNumber) {
         for(var key in cart[i]){
             if(cart[i].hasOwnProperty(key)){
                     cart.splice(i,1);
-                  
+
             }
         }
 
