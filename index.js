@@ -23,21 +23,23 @@ function addToCart(item) {
 }
 
 function viewCart() {
-  // write your code here
-  if (cart.length == 0) {
-    console.log("Your shopping cart is empty.");
-    return;
-  }
-
-  var sent = "In your cart, you have ";
-  var k = Object.keys(cart);
-  for (var i = 0; i < k.length; i++) {
-    if(cart.hasOwnProperty(k[i])){
-      sent += `{k[i]} at $${cart[k[i]]}${i === k.length-1?'.':
-                `${cart.length === 2 ? ' and ': ', '}` }`;
+    // write your code here
+    if (cart.length === 0) {
+        console.log("Your shopping cart is empty.");
+        return;
     }
-  }
-  console.log(sent);
+
+    var sent = "In your cart, you have ";
+
+    for (var i = 0; i < cart.length; i++) {
+        for(var key in cart[i]){
+            if(cart[i].hasOwnProperty(key)){
+                sent += `${key} at $${cart[i][key]}${i === cart.length-1?'.': `${cart.length === 2 ? ' and ': ', '}` }`;
+            }
+        }
+
+    }
+    console.log(sent);
 
 }
 
