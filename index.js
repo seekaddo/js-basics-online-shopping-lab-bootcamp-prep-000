@@ -34,7 +34,10 @@ function viewCart() {
     for (var i = 0; i < cart.length; i++) {
         for(var key in cart[i]){
             if(cart[i].hasOwnProperty(key)){
-                sent += `${key} at $${cart[i][key]}${i === cart.length-1?'.': `${ (cart.length-1) - i >= 2 ? ', ': ' and '}` }`;
+              var bol = (cart.length-1) - i === 1 && cart.length > 2;
+             var l = `${i === cart.length-1?'.': `${ bol ? ', and ':`${(cart.length-1) - i === 1 && !(cart.length > 2) ? ' and ': ', '}`}`}`;
+
+             sent += `${key} at $${cart[i][key]}${l}`;
             }
         }
 
