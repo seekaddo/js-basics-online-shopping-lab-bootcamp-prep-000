@@ -32,7 +32,8 @@ function viewCart() {
   var k = Object.keys(cart);
   for (var i = 0; i < k.length; i++) {
     if(cart.hasOwnProperty(k[i])){
-      sent += `{k[i]} at $${cart[k[i]]}${i === k.length-1?'.':${cart.length === 2 ? ' and ': ', '}}`;
+      sent += `{k[i]} at $${cart[k[i]]}${i === k.length-1?'.':
+                `${cart.length === 2 ? ' and ': ', '}` }`;
     }
   }
   console.log(sent);
