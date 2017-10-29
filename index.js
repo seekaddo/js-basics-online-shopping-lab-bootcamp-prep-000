@@ -64,19 +64,33 @@ function total() {
 }
 
 function removeFromCart(item) {
-  // write your code here
-  if (!cart.hasOwnProperty(item)) {
-    console.log("That item is not in your cart.");
-    return cart;
-  }
+    // write your code here
 
-  // for (var k in cart) {
-  //   if (cart.hasOwnProperty(k)) {
-  //
-  //     }
-  // }
-  delete cart[item];
-  return cart;
+    var found = false;
+
+    for (var i = 0; i < cart.length; i++) {
+        for(var key in cart[i]){
+            if(cart[i].hasOwnProperty(key)){
+
+                if (key === item){
+                    found = true;
+                    console.log(cart[i]);
+                     cart.splice(i,1);
+                    break;
+
+                }
+            }
+        }
+
+    }
+
+    if (!found) {
+        console.log("That item is not in your cart.");
+        return cart;
+    }
+
+
+    return cart;
 }
 
 function placeOrder(cardNumber) {
