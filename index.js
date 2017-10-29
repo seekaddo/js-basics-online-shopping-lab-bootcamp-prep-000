@@ -45,7 +45,7 @@ function total() {
   var counter = 0;
   for (var k in cart) {
     if (cart.hasOwnProperty(k)) {
-      counter++; 
+      counter++;
      }
   }
   return counter;
@@ -60,7 +60,7 @@ function removeFromCart(item) {
 
   // for (var k in cart) {
   //   if (cart.hasOwnProperty(k)) {
-  //       
+  //
   //     }
   // }
   delete cart[item];
@@ -80,5 +80,5 @@ function placeOrder(cardNumber) {
   for (const prop of Object.keys(cart)) {
     delete cart[prop];
   }
-  
+
 }
