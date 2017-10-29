@@ -103,8 +103,14 @@ function placeOrder(cardNumber) {
 
   console.log(`Your total cost is $${total()}, which will be charged to the card ${cardNumber}.`);
 
-  for (const prop of Object.keys(cart)) {
-    delete cart[prop];
-  }
+  for (var i = 0; i < cart.length; i++) {
+        for(var key in cart[i]){
+            if(cart[i].hasOwnProperty(key)){
+                    cart.splice(i,1);
+                  
+            }
+        }
+
+    }
 
 }
