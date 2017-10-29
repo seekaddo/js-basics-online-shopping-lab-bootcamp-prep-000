@@ -14,11 +14,12 @@ function setCart(c) {
 }
 
 function addToCart(item) {
-  // write your code here
-  cart[item] = getRandom();
-  console.log(`${item} has been added to your cart.`);
-
-  return cart;
+    // write your code here
+    var val = {};
+    val[item] = getRandom();
+    cart.push(val);
+    console.log(`${item} has been added to your cart.`);
+    return cart;
 }
 
 function viewCart() {
