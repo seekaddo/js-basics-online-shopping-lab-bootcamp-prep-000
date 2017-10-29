@@ -45,17 +45,22 @@ function viewCart() {
     console.log(sent);
 
 }
-
 function total() {
-  // write your code here
-  //return Object.keys(cart).length;
-  var counter = 0;
-  for (var k in cart) {
-    if (cart.hasOwnProperty(k)) {
-      counter++;
-     }
-  }
-  return counter;
+    // write your code here
+    //return Object.keys(cart).length;
+    var counter = 0;
+
+    for (var i = 0; i < cart.length; i++) {
+        for(var key in cart[i]){
+            if(cart[i].hasOwnProperty(key)){
+
+                counter += cart[i][key];
+            }
+        }
+
+    }
+    
+    return counter;
 }
 
 function removeFromCart(item) {
