@@ -14,11 +14,11 @@ describe("addToCart()", function() {
   it("can add items to the cart", function() {
     addToCart("apples");
 
-    expect(getCart().length).toEqual(1);
+    expect(Object.keys(getCart).length).toEqual(1);
 
     addToCart("bananas");
 
-    expect(getCart().length).toEqual(2);
+    expect(Object.keys(getCart).length).toEqual(2);
   });
 
   it("turns items into JavaScript objects before adding them to the cart", function() {
@@ -173,7 +173,7 @@ describe("removeFromCart()", function() {
 
     removeFromCart("yams");
 
-    expect(getCart().length).toEqual(1);
+    expect(Object.keys(getCart).length).toEqual(1);
   });
 
   it("alerts you if you're trying to remove an item that isn't in your cart", function() {
